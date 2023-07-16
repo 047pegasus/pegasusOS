@@ -154,12 +154,12 @@ class pegasusOS:
             return
         exec(open(filename).read())
 
-    # smolEDitor
+    # txtEDitor
     # Minimum viable text editor
     def ed(self, filename=""):
         self.page_size = 10
         self.cls()
-        print("Welcome to smolEDitor\nA smol text editor for smol operating system\n\nWrite h for help\nq to quit\n\n")
+        print("Welcome to txtEDitor\nA text editor for pegasus operating system\n\nWrite h for help\nq to quit\n\n")
         try:
             with open(filename,'r+') as file:
                 print("\nEditing "+filename+" file\n")
