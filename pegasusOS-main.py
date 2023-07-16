@@ -6,6 +6,9 @@
 import machine
 import uos
 import gc
+import network
+import usocket
+import utime
 
 class pegasusOS:
     def __init__(self):
@@ -26,7 +29,9 @@ class pegasusOS:
             "turbo": self.toggle_turbo,
             "ed": self.ed,
             "info": self.info,
-            "py": self.py
+            "py": self.py,
+            "ifconfig" : self.ifconfig,
+            "ping" : self.ping
         }
 
         self.boot()
@@ -154,12 +159,95 @@ class pegasusOS:
             return
         exec(open(filename).read())
 
+    def ifconfig(self):
+        wlan = network.WLAN(network.STA_IF)
+        wlan.active(True)
+        def scan_wifi_stations():
+            wlan = network.WLAN(network.STA_IF)
+            wlan.active(True)
+            scan_results = wlan.scan()
+            return scan_results
+
+        def connect_to_wifi_station(ssid, password):
+            wlan = network.WLAN(network.STA_IF)
+            wlan.active(True)
+            wlan.disconnect()
+            wlan.connect(ssid, password)
+            while not wlan.isconnected():
+                pass
+            return wlan.isconnected()
+        
+        while True:
+            # Scan for available Wi-Fi stations
+            scan_results = scan_wifi_stations()
+
+            # Display the available stations
+            print("Available Wi-Fi Stations:")
+            for i, station in enumerate(scan_results):
+                print(f"{i+1}. {station[0].decode()}")
+
+            # Prompt the user to select a station
+            selected_station = input("Enter the number of the station you want to connect to (or 'q' to quit): ")
+
+            # Exit the loop if the user wants to quit
+            if selected_station == 'q':
+                break
+            
+            # Validate the user's selection
+            if not selected_station.isdigit() or int(selected_station) < 1 or int(selected_station) > len(scan_results):
+                print("Invalid selection. Please try again.")
+                continue
+            
+            selected_station_ssid = scan_results[int(selected_station) - 1][0].decode()
+
+            # Prompt the user to enter the password
+            password = input("Enter the password for the selected station: ")
+
+            # Connect to the selected station
+            connection_status = connect_to_wifi_station(selected_station_ssid, password)
+
+            # Check if the connection was successful
+            if connection_status:
+                print("Connection successful!")
+                print("Network configuration:")
+                print("IP address:", wlan.ifconfig()[0])
+                print("Subnet mask:", wlan.ifconfig()[1])
+                print("Gateway address:", wlan.ifconfig()[2])
+                print("DNS server:", usocket.getaddrinfo("micropython.org", 80)[0][-1][0])
+
+                break
+            else:
+                print("Connection failed. Please try again.")
+
+
+
+    def ping(self, host, count=4, timeout=1):
+        addr = usocket.getaddrinfo(host, 0)[0][-1][0]
+
+        print(f"Pinging {host} [{addr}] with {count} packets:")
+
+        for i in range(count):
+            sock = usocket.socket()
+
+            start_time = utime.ticks_ms()
+
+            try:
+                sock.connect((addr, 80))  # Attempt to establish a TCP connection to port 80
+                end_time = utime.ticks_ms()
+                elapsed_time = utime.ticks_diff(end_time, start_time)
+
+                print(f"Reply from {addr}: bytes=0 time={elapsed_time}ms")
+            except OSError:
+                print("Request timed out.")
+
+            sock.close()
+    
     # txtEDitor
     # Minimum viable text editor
     def ed(self, filename=""):
         self.page_size = 10
         self.cls()
-        print("Welcome to txtEDitor\nA text editor for pegasus operating system\n\nWrite h for help\nq to quit\n\n")
+        print("Welcome to smolEDitor\nA smol text editor for smol operating system\n\nWrite h for help\nq to quit\n\n")
         try:
             with open(filename,'r+') as file:
                 print("\nEditing "+filename+" file\n")
@@ -230,4 +318,5 @@ class pegasusOS:
                 self.print_err("Failed to open the file.")
 
 pegasus = pegasusOS()
+
 
