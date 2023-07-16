@@ -1,8 +1,8 @@
-smolOS MANUAL
+pegasusOS MANUAL
 -------------
 
 # About
-smolOS - a tiny and simple operating system for MicroPython (targetting ESP8266 and RP2040) giving the user POSIX-like environment to play.
+pegasusOS - a fork of smolOS (targetting ESP8266 and RP2040) ready to connect to internet.
 
 
 ## List of user commands
@@ -21,6 +21,6 @@ smolOS - a tiny and simple operating system for MicroPython (targetting ESP8266 
   `mhz` 160 - set CPU speed in MHz, supported values are from 80 to 160
   `reboot` - reboot the system (soft reset)
 
-## smolEDitor
+## txtEDitor
 
 TBD
