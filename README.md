@@ -5,10 +5,6 @@ pegasusOS - a fork of smolOS which is a tiny and simple operating system for Mic
 
 ![pegasusOS in color version 0.7](media/welcome.png)
 
-Latest documentation available at official homepage:
-- [smolOS homepage (http)](http://smol.p1x.in/os/)
-- [smolOS homepage (https)](https://smol.p1x.in/os/)
-
 ## Real Life Usecases
 
 * listing and removing unwanted files on board
@@ -20,7 +16,7 @@ Latest documentation available at official homepage:
 
 ## pegasusOS Features
 
-* Adding connctivity features to the small device.
+* Network connctivity features to the small device.
 * Changes microcontroller into a small working PC
 * Homemade for fun and learning
 * Super small and fast
@@ -122,3 +118,10 @@ Write `help` for help :)
 First application: `ed`! Almost complete but very simple text editor.
 
 ![txtEDitor session](media/txteditor.png)
+
+### ifconfig & ping
+#### Easy use network commands:
+* `ifconfig`! Almost complete but very simple network configuration command to connect to a network wirelessly and show details about connection.
+* `ping`! Almost complete ping utility to validate host connection using host IP address and also supports a count variable to explicitly define count value for check run.
+
+![txtEDitor session](media/network.png)
