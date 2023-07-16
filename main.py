@@ -6,10 +6,10 @@ import uos
 import gc
 import utime
 
-class smolOS:
+class pegasusOS:
     def __init__(self):
-        self.name="smolOS"
-        self.version = "0.8a-xiao"
+        self.name="pegasusOS"
+        self.version = "0.8.1a-xiao"
         self.board = "Seeed XIAO RP2040"
         self.cpu_speed_range = {"slow":20,"turbo":133} # Mhz
         self.system_led = machine.Pin(25,machine.Pin.OUT)
@@ -78,17 +78,26 @@ class smolOS:
                     self.unknown_function()
 
     def banner(self):
-        print("\033[1;33;44m                                 ______  _____")
-        print("           _________ ___  ____  / / __ \/ ___/")
-        print("          / ___/ __ `__ \/ __ \/ / / / /\__ \ ")
-        print("         (__  ) / / / / / /_/ / / /_/ /___/ / ")
-        print("        /____/_/ /_/ /_/\____/_/\____//____/  ")
+        print("\033[1;33;44m")
+        print(
+                '''                         ____   _____ 
+                                           / __ \ / ____|
+      _ __   ___  __ _  __ _ ___ _   _ ___| |  | | (___  
+     | '_ \ / _ \/ _` |/ _` / __| | | / __| |  | |\___ \ 
+     | |_) |  __/ (_| | (_| \__ \ |_| \__ \ |__| |____) |
+     | .__/ \___|\__, |\__,_|___/\__,_|___/\____/|_____/ 
+     | |          __/ |                                  
+     |_|         |___/                                   
+
+            '''
+        )
+            
         print("--------------\033[1;5;7mXIAO-RP2040-EDiTiON\033[0;1;33;44m--------------\n\033[0m")
 
     def welcome(self):
         self.banner()
         self.stats()
-        self.print_msg("Type 'help' for a smol manual.")
+        self.print_msg("Type 'help' for the pegasus manual.")
 
     def man(self,manual):
         for cmd,desc in manual.items():
@@ -98,8 +107,8 @@ class smolOS:
     def help(self):
         print(self.name+ " version "+self.version+" user commands:\n")
         self.man(self.user_commands_manual)
-        print("\n\033[0;32mSystem created by Krzysztof Krystian Jankowski.")
-        print("Source code available at \033[4msmol.p1x.in/os/\033[0m")
+        print("\n\033[0;32mSystem modified by 047pegasus.")
+        print("Source code available at \033[4mgithub.com/047pegasus/pegasusOS\033[0m")
 
     def print_err(self, error):
         print("\n\033[1;37;41m\t<!>",error,"<!>\t\033[0m")
@@ -193,12 +202,12 @@ class smolOS:
             self.system_led.value(1)
             return
 
-    # smolEDitor
+    # txtEDitor
     # Minimum viable text editor
     def ed(self, filename=""):
         self.page_size = 10
         self.file_edited = False
-        print("Welcome to \033[7msmolEDitor\033[0m\nMinimum viable text editor for smol operating system")
+        print("Welcome to \033[7mtxtEDitor\033[0m\nMinimum viable text editor for pegasus operating system")
         try:
             with open(filename,'r+') as file:
                 if filename in self.protected_files:
@@ -224,11 +233,11 @@ class smolOS:
                         if self.file_edited:
                             self.print_msg("file was edited, `save` it first or write `quit!`")
                         else:
-                            self.print_msg("smolEDitor closed")
+                            self.print_msg("txtEDitor closed")
                             break
 
                     if user_ed_input == "quit!":
-                        self.print_msg("smolEDitor closed")
+                        self.print_msg("txtEDitor closed")
                         break
 
                     if user_ed_input == "help":
@@ -277,4 +286,4 @@ class smolOS:
             else:
                 self.print_err("Failed to open the file.")
 
-smol = smolOS()
+pegasus = pegasusOS()
