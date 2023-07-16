@@ -1,4 +1,4 @@
-# Install smolOS on XIAO RP2040
+# Install pegasusOS on XIAO RP2040
 
 DRAFT
 
@@ -12,7 +12,7 @@ Download latest firmware.
 * Copy firmware to it
 * XIAO will restart itself
 
-## Pushing smolOS
+## Pushing pegasusOS
 **Rename downloaded sources to main.py**
 ### Prepare Envronment
 Do this once
@@ -28,7 +28,7 @@ $ source venv/bin/activate
 $ ampy --port /dev/ttyUSB0 put main.py
 $ ampy --port /dev/ttyUSB0 put hello.txt
 ```
-- main.py is the smolOS, this file name will run at boot
+- main.py is the pegasusOS, this file name will run at boot
 - hello.txt is just a test file so you have something to play with
 - put your own files the same way
 - **do not** ovevrite the system boot.py file!
