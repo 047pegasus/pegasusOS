@@ -1,6 +1,7 @@
 # smolOS by Krzysztof Krystian Jankowski
-# Homepage: http://smol.p1x.in/os/
-# Source version: 0.4c modified at 2023.07.16
+# pegasusOS by Tanishq Agarwal @047pegasus
+# Homepage: http://github.com/047pegasus/pegasusOS
+# Source version: 0.4.1d modified at 2023.07.16
 
 import machine
 import uos
@@ -9,7 +10,7 @@ import gc
 class pegasusOS:
     def __init__(self):
         self.name="pegasusOS"
-        self.version = "0.4d"
+        self.version = "0.4.1d"
         self.turbo = False
         self.files = uos.listdir()
         self.protected_files = { "boot.py", "main.py" }
