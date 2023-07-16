@@ -3,7 +3,7 @@
 pegasusOS - a fork of smolOS which is a tiny and simple operating system for MicroPython (targetting ESP8266 and RP2040) giving the user POSIX-like environment to play.
 
 
-![pegasusOS in color version 0.7](media/smolos-color.png)
+![pegasusOS in color version 0.7](media/welcome.png)
 
 Latest documentation available at official homepage:
 - [smolOS homepage (http)](http://smol.p1x.in/os/)
