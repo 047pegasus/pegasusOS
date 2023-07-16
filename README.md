@@ -111,7 +111,7 @@ Or restart device:
 ```
 
 ## Using
-![Welcome screen](media/smolos.png)
+![Welcome screen](media/pegasus.png)
 
 Write `help` for help :)
 
@@ -121,4 +121,4 @@ Write `help` for help :)
 ### txtEDitor
 First application: `ed`! Almost complete but very simple text editor.
 
-![txtEDitor session](media/smoleditor.png)
+![txtEDitor session](media/txteditor.png)
