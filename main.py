@@ -1,5 +1,6 @@
+# pegasusOS - modified by Tanishq Agarwal @047pegasus
 # smolOS by Krzysztof Krystian Jankowski
-# Homepage: http://smol.p1x.in/os/
+# Homepage: http://github.com/047pegasus/pegasusOS
 
 import machine
 import uos

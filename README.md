@@ -3,7 +3,7 @@
 pegasusOS - a fork of smolOS which is a tiny and simple operating system for MicroPython (targetting ESP8266 and RP2040) giving the user POSIX-like environment to play.
 
 
-![smolOS in color version 0.7](media/smolos-color.png)
+![pegasusOS in color version 0.7](media/smolos-color.png)
 
 Latest documentation available at official homepage:
 - [smolOS homepage (http)](http://smol.p1x.in/os/)
@@ -16,9 +16,11 @@ Latest documentation available at official homepage:
 * quicly iterating parameters for a program
 * (planned) easy expanding OS with own functions coding on the board
 * learning basics of operating disk operating system (using and modyfing)
+* connecting to network using command line
 
 ## pegasusOS Features
 
+* Adding connctivity features to the small device.
 * Changes microcontroller into a small working PC
 * Homemade for fun and learning
 * Super small and fast
@@ -87,7 +89,7 @@ CPU Speed: 80.0 MHz
 
 
 
-smolInfo: Type [help] for pegasus manual.
+pegasusInfo: Type [help] for pegasus manual.
 
 
 
@@ -119,4 +121,4 @@ Write `help` for help :)
 ### txtEDitor
 First application: `ed`! Almost complete but very simple text editor.
 
-![smolEDitor session](media/smoleditor.png)
+![txtEDitor session](media/smoleditor.png)

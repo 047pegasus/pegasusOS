@@ -11,7 +11,7 @@ class neo_pixel():
         print("NeoPixel: Initialized.\bUse pixel.start(), pixel.stop(), pixel.color(\"r,g,b\").")
 
     def color(self,rgb_color=""):
-        if rgb_color="":
+        if rgb_color=="":
             rgb_color=(0,0,0)
         color = tuple(map(int, rgb_color.split(',')))
         self.grid.fill(color)

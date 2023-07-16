@@ -36,7 +36,7 @@ class pegasusOS:
         self.cls()
         self.welcome()
         while True:
-            user_input = input("\nsmol $: ")
+            user_input = input("\npegasus $: ")
             parts = user_input.split()
             if len(parts) > 0:
                 command = parts[0]
@@ -50,8 +50,8 @@ class pegasusOS:
                     self.unknown_function()
 
     def banner(self):
-        print("______________________________________________")
-        print('''                       ____   _____ 
+        print("_____________________________________________________")
+        print('''                                        ____   _____ 
                                        / __ \ / ____|
   _ __   ___  __ _  __ _ ___ _   _ ___| |  | | (___  
  | '_ \ / _ \/ _` |/ _` / __| | | / __| |  | |\___ \ 
@@ -60,7 +60,7 @@ class pegasusOS:
  | |          __/ |                                  
  |_|         |___/                                   
         ''')
-        print("==============================================")
+        print("=====================================================")
 
     def welcome(self):
         print("\n\n\n\n")
@@ -230,3 +230,4 @@ class pegasusOS:
                 self.print_err("Failed to open the file.")
 
 pegasus = pegasusOS()
+
