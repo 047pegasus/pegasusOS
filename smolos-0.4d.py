@@ -1,14 +1,14 @@
 # smolOS by Krzysztof Krystian Jankowski
 # Homepage: http://smol.p1x.in/os/
-# Source version: 0.4c modified at 2023.07.13
+# Source version: 0.4c modified at 2023.07.16
 
 import machine
 import uos
 import gc
 
-class smolOS:
+class pegasusOS:
     def __init__(self):
-        self.name="smolOS"
+        self.name="pegasusOS"
         self.version = "0.4d"
         self.turbo = False
         self.files = uos.listdir()
@@ -67,14 +67,14 @@ class smolOS:
         print("\n")
         self.stats()
         print("\n\n\n\n")
-        self.print_msg("Type 'help' for a smol manual.")
+        self.print_msg("Type 'help' for the pegasus manual.")
         print("\n")
 
     def help(self):
         print(self.name+ " Version "+self.version+" user commands:\n")
         print("\t`ls` - list files\n\t`cat filename` - print file\n\t`info filename` - info about selected file\n\t`rm filename` - remove file\n\t`ed filename` - text editor\n\t`banner` - system banner\n\t`cls` - clear screen\n\t`mhz` 160 - set CPU speed (80-160) in MHz\n\t`stats` - hardware and software information")
-        print("\nSystem created by Krzysztof Krystian Jankowski")
-        print("Code available at github and smol.p1x.in/os/")
+        print("\nSystem modified by 047pegasus")
+        print("Code available at Github 047pegasus/pegasusOS.")
 
     def print_err(self, error):
         print("\n\t<!>",error,"<!>")
@@ -191,7 +191,7 @@ class smolOS:
                         break
 
                     if user_ed_input in ("h","help"):
-                        message = "smolEDitor minimum viable text editor\n\n`n` - next",self.page_size,"lines\n`b` - back",self.page_size,"lines\n`n text` - replacing n line with a text\n`a`,`add` - add new line\n`w`,`write`,'save' - write to file\n`h` - this help\n`q` - quit\n"
+                        message = "txtEDitor minimum viable text editor\n\n`n` - next",self.page_size,"lines\n`b` - back",self.page_size,"lines\n`n text` - replacing n line with a text\n`a`,`add` - add new line\n`w`,`write`,'save' - write to file\n`h` - this help\n`q` - quit\n"
 
                     if user_ed_input in ("a","add"):
                         line_count += 1
@@ -228,5 +228,5 @@ class smolOS:
             else:
                 self.print_err("Failed to open the file.")
 
-smol = smolOS()
+pegasus = pegasusOS()
 
