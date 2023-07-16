@@ -1,6 +1,6 @@
-# smolOS
+# pegasusOS
 
-smolOS - a tiny and simple operating system for MicroPython (targetting ESP8266 and RP2040) giving the user POSIX-like environment to play.
+pegasusOS - a fork of smolOS which is a tiny and simple operating system for MicroPython (targetting ESP8266 and RP2040) giving the user POSIX-like environment to play.
 
 
 ![smolOS in color version 0.7](media/smolos-color.png)
@@ -17,7 +17,7 @@ Latest documentation available at official homepage:
 * (planned) easy expanding OS with own functions coding on the board
 * learning basics of operating disk operating system (using and modyfing)
 
-## smolOS Features
+## pegasusOS Features
 
 * Changes microcontroller into a small working PC
 * Homemade for fun and learning
@@ -56,34 +56,43 @@ First start. Or after flashing new main.py file. Restart the microcontroller:
 >>> machine.soft_reset()
 ```
 
-This should restart the device and "boot" you into the smolOS. Like so:
+This should restart the device and "boot" you into the pegasusOS. Like so:
 
 ```
 
 
 
-______________________________________________
-                                 ______  _____
-           _________ ___  ____  / / __ \/ ___/
-          / ___/ __ `__ \/ __ \/ / / / /\__ \
-         (__  ) / / / / / /_/ / / /_/ /___/ /
- _[..]  /____/_/ /_/ /_/\____/_/\____//____/
-==============================================
+_____________________________________________________
+                                        ____   _____ 
+                                       / __ \ / ____|
+  _ __   ___  __ _  __ _ ___ _   _ ___| |  | | (___  
+ | '_ \ / _ \/ _` |/ _` / __| | | / __| |  | |\___ \ 
+ | |_) |  __/ (_| | (_| \__ \ |_| \__ \ |__| |____) |
+ | .__/ \___|\__, |\__,_|___/\__,_|___/\____/|_____/ 
+ | |          __/ |                   ________               
+ |_|         |___/                    \..__../                               
+=====================================================
+░█████╗░░░██╗██╗███████╗██████╗░███████╗░██████╗░░█████╗░░██████╗██╗░░░██╗░██████╗
+██╔══██╗░██╔╝██║╚════██║██╔══██╗██╔════╝██╔════╝░██╔══██╗██╔════╝██║░░░██║██╔════╝
+██║░░██║██╔╝░██║░░░░██╔╝██████╔╝█████╗░░██║░░██╗░███████║╚█████╗░██║░░░██║╚█████╗░
+██║░░██║███████║░░░██╔╝░██╔═══╝░██╔══╝░░██║░░╚██╗██╔══██║░╚═══██╗██║░░░██║░╚═══██╗
+╚█████╔╝╚════██║░░██╔╝░░██║░░░░░███████╗╚██████╔╝██║░░██║██████╔╝╚██████╔╝██████╔╝
+░╚════╝░░░░░░╚═╝░░╚═╝░░░╚═╝░░░░░╚══════╝░╚═════╝░╚═╝░░╚═╝╚═════╝░░╚═════╝░╚═════╝░
+-------Device Owner: Tanishq @047pegasus------
+smolOS Version 0.3
+MicroPython: 2.2.0-dev(9422289)
+Firmware: v1.20.0 on 2023-04-26
+CPU Speed: 80.0 MHz
 
-       smolOS Version 0.3
-       MicroPython: 2.2.0-dev(9422289)
-       Firmware: v1.20.0 on 2023-04-26
-       CPU Speed: 80.0 MHz
+
+
+
+smolInfo: Type [help] for pegasus manual.
 
 
 
 
-smolInfo: Type [help] for smol manual.
-
-
-
-
-smol $:
+pegasus $:
 ```
 
 
@@ -91,7 +100,7 @@ smol $:
 
 If you close the system or encurage a fatal error start OS again. In MicroPython REPL write:
 ```
->>> smolOS()
+>>> pegasusOS()
 ```
 
 Or restart device:
@@ -107,7 +116,7 @@ Write `help` for help :)
 ### Example user session
 ![Sample user session](media/commands.png)
 
-### smolEDitor
+### txtEDitor
 First application: `ed`! Almost complete but very simple text editor.
 
 ![smolEDitor session](media/smoleditor.png)
